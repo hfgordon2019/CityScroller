@@ -12,7 +12,9 @@
         HorizontalLine fastLine = new HorizontalLine(50, 2.5);
         
         Fish randomFish = new Fish(200, 100);  
-        
+       
+        Building newBuilding = new Building(bX, bY, bW, bH);
+       
         int WINDOW_WIDTH = 600;
         int WINDOW_HEIGHT = 400;
         
@@ -43,7 +45,27 @@
         
         } 
         
-         
+        class Building {
+
+         buildingX, buildingY, buildingWidth, buildingHeight, buildingColor;
+
+         Building (var bX,var bY,var bW,var bH) {
+         	buildingX = bX;
+         	buildingY = bY;
+         	buildingWidth = bW;
+         	buildingHeight = bH;
+         }
+         void drawBuilding(){
+	         buildingColor = (255, 0, 0);
+	         bX = 10;
+	         bY = 100;
+	         bW = 100;
+	         bH = 50;
+	         fill buildingColor;
+	         rect (bX, bY, bW, bH);
+         }
+
+        }
         
         class HorizontalLine { 
           
