@@ -7,10 +7,10 @@
         
         // Declare and contruct two objects (h1, h2) from the class HorizontalLine 
        
-        Building newBuilding = new Building(10, 100, 100, 50);
+        Building newBuilding = new Building(random(50,550), 325, 100, 275);
        
         int WINDOW_WIDTH = 600;
-        int WINDOW_HEIGHT = 400;
+        int WINDOW_HEIGHT = 600;
         
         int REFRESH_RATE_PER_SECOND = 30;
         //runs once at the start of the program 
@@ -27,7 +27,7 @@
         //called repeatedly 
         void draw() { 
         
-          background(255,255,255);
+          background(27,159,208);
 
           newBuilding.drawBuilding();
         
@@ -42,10 +42,11 @@
          	buildingY = bY;
          	buildingWidth = bW;
          	buildingHeight = bH;
+         
          }
          void drawBuilding(){
 	         
-	         fill (0,0,0);
+	         fill (128,128,128);
 	         rect (buildingX, buildingY, buildingWidth, buildingHeight);
          }
 
