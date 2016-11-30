@@ -17,7 +17,7 @@
         void setup() 
         {
           buildingList = new ArrayList<Building>();
-          var numberOfBuilding = (7);
+          var numberOfBuilding = (10);
           for(var i = 0; i < numberOfBuilding; i++) {
 		  	   buildingList.add(new Building(550,200, 100, 400));
 		      }
@@ -50,6 +50,7 @@
          	buildingHeight = bH;
          	buildingY = random(300,500);
          	buildingHeight = 600-buildingY;
+          buildingX = random (3,590);
          
          }
          void drawBuilding(){
