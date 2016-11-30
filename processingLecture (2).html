@@ -36,6 +36,7 @@
           for(var i = 0; i < buildingList.size(); i++) {
 				    Building newBuilding = buildingList.get(i); 
 				    newBuilding.drawBuilding();
+				    newBuilding.updateAndScroll();
       	  }
         } 
         
@@ -50,7 +51,7 @@
          	buildingHeight = bH;
          	buildingY = random(300,500);
          	buildingHeight = 600-buildingY;
-          buildingX = random (3,590);
+         	buildingX = random (3,590);
          
          }
          void drawBuilding(){
@@ -58,7 +59,18 @@
 	         fill (128,128,128);
 	         rect (buildingX, buildingY, buildingWidth, buildingHeight);
          }
-
+         void updateAndScroll(){
+         scroll();
+         updateBuilding();
+         }
+         void scroll(){
+         buildingX = buildingX - 2;
+         }
+         void updateBuilding(){
+         	if (buildingX < -50){
+         		buildingX = 600;
+         	}
+         }
         }
         
   
