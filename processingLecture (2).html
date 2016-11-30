@@ -17,13 +17,13 @@
         void setup() 
         {
           buildingList = new ArrayList<Building>();
-          var numberOfBuilding = random(1,7);
+          var numberOfBuilding = (7);
           for(var i = 0; i < numberOfBuilding; i++) {
-		  	buildingList.add(new Building(550,200, 100, 400));
-		  }
+		  	   buildingList.add(new Building(550,200, 100, 400));
+		      }
           size(WINDOW_WIDTH, WINDOW_HEIGHT);
         
-          frameRate(REFRESH_RATE_PER_SECOND);//how often per second the draw function is called 
+          frameRate(REFRESH_RATE_PER_SECOND); //how often per second the draw function is called 
         
         }
         
@@ -34,9 +34,10 @@
           background(27,159,208);
 
           for(var i = 0; i < buildingList.size(); i++) {
-				Building newBuilding = buildingList.get(i); 
-				newBuilding.drawBuilding();
-      	  } 
+				    Building newBuilding = buildingList.get(i); 
+				    newBuilding.drawBuilding();
+      	  }
+        } 
         
         class Building {
 
