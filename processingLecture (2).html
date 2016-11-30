@@ -6,9 +6,9 @@
         // Declare and contruct two objects (h1, h2) from the class HorizontalLine 
         
         // Declare and contruct two objects (h1, h2) from the class HorizontalLine 
-       
-        Building newBuilding = new Building(random(50,550), 325, 100, 275);
-       
+        
+        
+        ArrayList<Building> buildingList;
         int WINDOW_WIDTH = 600;
         int WINDOW_HEIGHT = 600;
         
@@ -16,7 +16,11 @@
         //runs once at the start of the program 
         void setup() 
         {
-        
+          buildingList = new ArrayList<Building>();
+          var numberOfBuilding = random(1,7);
+          for(var i = 0; i < numberOfBuilding; i++) {
+		  	buildingList.add(new Building(550,200, 100, 400));
+		  }
           size(WINDOW_WIDTH, WINDOW_HEIGHT);
         
           frameRate(REFRESH_RATE_PER_SECOND);//how often per second the draw function is called 
@@ -29,9 +33,10 @@
         
           background(27,159,208);
 
-          newBuilding.drawBuilding();
-        
-        } 
+          for(var i = 0; i < buildingList.size(); i++) {
+				Building newBuilding = buildingList.get(i); 
+				newBuilding.drawBuilding();
+      	  } 
         
         class Building {
 
@@ -42,6 +47,8 @@
          	buildingY = bY;
          	buildingWidth = bW;
          	buildingHeight = bH;
+         	buildingY = random(300,500);
+         	buildingHeight = 600-buildingY;
          
          }
          void drawBuilding(){
