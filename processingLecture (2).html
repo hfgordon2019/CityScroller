@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>FishTank 2.0</title>
+		<title>Cityscroller</title>
 		<script src="http://cloud.github.com/downloads/processing-js/processing-js/processing-1.4.1.min.js"></script>
 		<script type="text/processing" data-processing-target="mycanvas">
         // Declare and contruct two objects (h1, h2) from the class HorizontalLine 
@@ -8,7 +8,7 @@
         // Declare and contruct two objects (h1, h2) from the class HorizontalLine 
         
         
-        ArrayList<Building> buildingList;
+        
         int WINDOW_WIDTH = 600;
         int WINDOW_HEIGHT = 600;
         
@@ -16,11 +16,7 @@
         //runs once at the start of the program 
         void setup() 
         {
-          buildingList = new ArrayList<Building>();
-          var numberOfBuilding = (10);
-          for(var i = 0; i < numberOfBuilding; i++) {
-		  	   buildingList.add(new Building(550,200, 100, 400));
-		      }
+          
           size(WINDOW_WIDTH, WINDOW_HEIGHT);
         
           frameRate(REFRESH_RATE_PER_SECOND); //how often per second the draw function is called 
@@ -33,21 +29,41 @@
         
           background(27,159,208);
 
-          for(var i = 0; i < buildingList.size(); i++) {
-				    Building newBuilding = buildingList.get(i); 
-				    newBuilding.drawBuilding();
-				    newBuilding.updateAndScroll();
+          //drawSkyline();
       	  }
         } 
-        
+        class Skyline 
+        {
+	        //attributes
+	        ArrayList<Building>buildingList;
+	        	var xPos;
+	        Skyline(){
+	        	buildingList = newArrayList<Building>()
+	        		xPos = 0
+	        }
+	        void drawSkyline()
+	        {
+	        for(var i = 0; i < buildingList.size(); i++) {
+				    Building currentBuilding = buildingList.get(i); 
+				    currentBuilding.drawBuilding();
+				    currentBuilding.updateAndScroll();
+	        }
+
+	        void addBuilding(){
+	        	var currentBuildingWidth=random(10,80);
+	        Building currentBuilding=Building(xPos,currentBuildingWidth);
+		        buildingList.add(currentBuilding);
+		        	xPos += currentBuildingWidth;
+		     }
+        }
         class Building {
 
          var buildingX, buildingY, buildingWidth, buildingHeight;
 
-         Building (var bX,var bY,var bW,var bH) {
-         	buildingX = bX;
+         Building (var xPos,var cBW) {
+         	buildingX = xPos;
          	buildingY = bY;
-         	buildingWidth = bW;
+         	currentBuildingWidth = cBW;
          	buildingHeight = bH;
          	buildingY = random(300,500);
          	buildingHeight = 600-buildingY;
