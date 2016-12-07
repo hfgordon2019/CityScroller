@@ -23,7 +23,7 @@
         	background(0); //needed in the draw function to "clear" the screen between updates
 	  		testBuilding.drawAndUpdate();
 	  		firstSkyline.drawSkyline();//TODO: Call drawSkyline on your Skyline object
-	  
+	  		
         } 
 
 
@@ -37,16 +37,17 @@
 				fillSkyline();//when a Skyline is created it automatically has enough buildings to fill the screen
 			}
 			
-		//	void moveSkyline(){
-			//	if (xPos > screen.width){
-			//		xPos = 0;
-			//	}
-		//	}
+			void moveSkyline(){
+				if (xPos > screen.width){
+					xPos = 0;
+				}
+			}
 
 			void drawSkyline(){
 				for(var i = 0; i < buildingList.size(); i++){
 					Building firstSkyline = buildingList.get(i);
 					firstSkyline.drawBuilding();
+					firstSkyline.drawAndUpdate();
 					}
 				//TODO:loop through buildingList and draw each Building
 			}
