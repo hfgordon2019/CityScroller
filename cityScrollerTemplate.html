@@ -5,7 +5,7 @@
 		<script type="text/processing" data-processing-target="mycanvas">
 		
 		Building testBuilding = new Building(0, random(30,100));	        
-	//	Skyline firstSkyline = new Skyline(); //TODO: Create an instance of your Skyline object	
+		Skyline firstSkyline = new Skyline(); //TODO: Create an instance of your Skyline object	
         
         //since these are variables we don't want to ever change in the code, we capitalize them 
         var WINDOW_WIDTH = screen.width;
@@ -22,7 +22,7 @@
         void draw() { 
         	background(0); //needed in the draw function to "clear" the screen between updates
 	  		testBuilding.drawAndUpdate();
-	  	//	firstSkyline.drawSkyline();//TODO: Call drawSkyline on your Skyline object
+	  		firstSkyline.drawSkyline();//TODO: Call drawSkyline on your Skyline object
 	  
         } 
 
@@ -32,9 +32,9 @@
 			var xPosition;
 			
 			Skyline(){
-			//	buildingList = new ArrayList<Building>();
-			//	xPosition = 0;
-			//	fillSkyline();//when a Skyline is created it automatically has enough buildings to fill the screen
+				buildingList = new ArrayList<Building>();
+				xPosition = 0;
+				fillSkyline();//when a Skyline is created it automatically has enough buildings to fill the screen
 			}
 			
 		//	void moveSkyline(){
@@ -43,27 +43,28 @@
 			//	}
 		//	}
 
-		//	void drawSkyline(){
-			//	for(var = 0; i < buildingList.size(); i++){
-			//		Skyline firstSkyline = buildingList.get(i);
-			//		firstSkyline.drawBuilding();
+			void drawSkyline(){
+				for(var i = 0; i < buildingList.size(); i++){
+					Building firstSkyline = buildingList.get(i);
+					firstSkyline.drawBuilding();
+					}
 				//TODO:loop through buildingList and draw each Building
-		//	}
+			}
 
-		//	void update(){
-		//		//TODO:loop through buildingList and update each Building
-		//	}
+			void update(){
+				//TODO:loop through buildingList and update each Building
+			}
 
 			void addBuilding(){
-			//	var randomBuildingWidth = random(10,80);
-			//	Building currentBuilding = new Building(xPosition, randomBuildingWidth);
-			//	buildingList.add(currentBuilding);
-			//	xPosition += randomBuildingWidth;
+				var randomBuildingWidth = random(10,80);
+				Building currentBuilding = new Building(xPosition, randomBuildingWidth);
+				buildingList.add(currentBuilding);
+				xPosition += randomBuildingWidth;
 			}
 
 			void fillSkyline(){
-			//	while(xPosition < screen.width){
-			//		addBuilding();
+				while(xPosition < screen.width){
+					addBuilding();
 				}
 			}
 		}
