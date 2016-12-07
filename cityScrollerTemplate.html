@@ -22,7 +22,7 @@
         void draw() { 
         	background(0); //needed in the draw function to "clear" the screen between updates
 	  		testBuilding.drawAndUpdate();
-	  		firstSkyline.drawSkyline();//TODO: Call drawSkyline on your Skyline object
+	  	//	firstSkyline.drawSkyline();//TODO: Call drawSkyline on your Skyline object
 	  
         } 
 
@@ -38,15 +38,15 @@
 			}
 			
 			void moveSkyline(){
-				if (xPos > screen.width){
-					xPos = 0;
-				}
+			//	if (xPos > screen.width){
+			//		xPos = 0;
+			//	}
 			}
 
 			void drawSkyline(){
-				for(var = 0; i < buildingList.size(); i++){
-					Skyline firstSkyline = buildingList.get(i);
-					firstSkyline.drawBuilding();
+			//	for(var = 0; i < buildingList.size(); i++){
+			//		Skyline firstSkyline = buildingList.get(i);
+			//		firstSkyline.drawBuilding();
 				//TODO:loop through buildingList and draw each Building
 			}
 
@@ -62,8 +62,8 @@
 			}
 
 			void fillSkyline(){
-				while(xPosition < screen.width){
-					addBuilding();
+			//	while(xPosition < screen.width){
+			//		addBuilding();
 				}
 			}
 		}
