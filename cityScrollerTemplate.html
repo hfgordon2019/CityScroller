@@ -21,7 +21,6 @@
         //called repeatedly
         void draw() { 
         	background(0); //needed in the draw function to "clear" the screen between updates
-	  		testBuilding.drawAndUpdate();
 	  		firstSkyline.drawSkyline();//TODO: Call drawSkyline on your Skyline object
 	  		
         } 
@@ -38,9 +37,9 @@
 			}
 			
 			void moveSkyline(){
-				if (xPos > screen.width){
-					xPos = 0;
-				}
+				if (xPosition > screen.width){
+					xPosition = 0;
+					}
 			}
 
 			void drawSkyline(){
