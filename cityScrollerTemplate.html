@@ -36,23 +36,27 @@
 				fillSkyline();//when a Skyline is created it automatically has enough buildings to fill the screen
 			}
 			
-			void moveSkyline(){
-				if (xPosition > screen.width){
-					xPosition = 0;
-					}
-			}
+			//void moveSkyline(){
+			//	if (xPosition > screen.width){
+			//		xPosition = 0;
+			//		}
+			//}
 
 			void drawSkyline(){
 				for(var i = 0; i < buildingList.size(); i++){
 					Building firstSkyline = buildingList.get(i);
 					firstSkyline.drawBuilding();
 					firstSkyline.drawAndUpdate();
+					//firstSkyline.update();
 					}
 				//TODO:loop through buildingList and draw each Building
 			}
 
 			void update(){
-				//TODO:loop through buildingList and update each Building
+				//int getxPosition() {return xPosition;}
+				if (xPosition > screen.width){
+					firstSkyline.addBuilding;
+				}
 			}
 
 			void addBuilding(){
