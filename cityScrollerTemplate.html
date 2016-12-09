@@ -5,7 +5,7 @@
 		<script type="text/processing" data-processing-target="mycanvas">
 		
 		Building testBuilding = new Building(0, random(30,100));	        
-		Skyline firstSkyline = new Skyline(); //TODO: Create an instance of your Skyline object	
+		Skyline currentBuilding = new Skyline(); //TODO: Create an instance of your Skyline object	
         
         //since these are variables we don't want to ever change in the code, we capitalize them 
         var WINDOW_WIDTH = screen.width;
@@ -21,8 +21,7 @@
         //called repeatedly
         void draw() { 
         	background(0); //needed in the draw function to "clear" the screen between updates
-	  		firstSkyline.drawSkyline();//TODO: Call drawSkyline on your Skyline object
-	  		
+	  		currentBuilding.drawSkyline();//TODO: Call drawSkyline on your Skyline object
         } 
 
 
@@ -36,31 +35,32 @@
 				fillSkyline();//when a Skyline is created it automatically has enough buildings to fill the screen
 			}
 			
-			//void moveSkyline(){
-			//	if (xPosition > screen.width){
-			//		xPosition = 0;
-			//		}
-			//}
+			<!-- void moveSkyline(){
+				if (xPosition > screen.width){
+					xPosition = 0;
+					}
+			} -->
 
 			void drawSkyline(){
 				for(var i = 0; i < buildingList.size(); i++){
-					Building firstSkyline = buildingList.get(i);
-					firstSkyline.drawBuilding();
-					firstSkyline.drawAndUpdate();
-					//firstSkyline.update();
+					Building currentBuilding = buildingList.get(i);
+					currentBuilding.drawBuilding();
+					currentBuilding.drawAndUpdate();
 					}
-				//TODO:loop through buildingList and draw each Building
 			}
 
 			void update(){
-				//int getxPosition() {return xPosition;}
-				if (xPosition > screen.width){
-					firstSkyline.addBuilding;
-				}
+				for(var i = 0; i < buildingList.size(); i++){
+					Building currentBuilding = buildingList.get(i);
+					currentBuilding.update(5);
+					if (currentBuilding.getxPos(); > screen.width){
+						buildingList.addBuilding;
+						}	
+					}
 			}
 
 			void addBuilding(){
-				var randomBuildingWidth = random(10,80);
+				var randomBuildingWidth = random(40,80);
 				Building currentBuilding = new Building(xPosition, randomBuildingWidth);
 				buildingList.add(currentBuilding);
 				xPosition += randomBuildingWidth;
@@ -76,8 +76,10 @@
         class Building {
         	var xPosition, yPosition, buildingHeight, buildingWidth;
         	var buildingColor;
+        	int xPosition = 0;
+        	
         	Building(var xPos, var bw ) {
-        		buildingHeight = random(30,250);
+        		buildingHeight = random(30,150);
         		buildingWidth = bw;
         		xPosition = xPos;
         		buildingColor = color(0,0,255); 
@@ -96,6 +98,9 @@
         	
         	void update(var speed){
         		xPosition += speed;
+        	}
+        	int getxPos() {
+        		return xPosition;
         	}
         	
         }
